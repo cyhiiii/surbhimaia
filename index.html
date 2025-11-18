@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Messika Paris - Gift Selection - Luxury jewelry featuring the moving diamond bangle collection">
+  <title>MESSIKA PARIS - Gift Selection</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- hero-background-container: z-index 0 -->
+  <div id="hero-background-container" class="hero-background-container">
+    <img 
+      id="hero-image" 
+      class="hero-image" 
+      src="assets/messika_holiday_purple_hero.jpg" 
+      alt="Messika silver bangle with three moving diamonds against glossy purple spherical balloons"
+      width="1440"
+      height="900"
+    />
+  </div>
+
+  <!-- header-nav: z-index 10 -->
+  <header id="header-nav" class="header-nav">
+    <!-- header-left-group -->
+    <div id="header-left-group" class="header-left-group">
+      <button id="icon-hamburger" class="icon-hamburger" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+      
+      <a id="link-wishlist-group" class="link-wishlist-group" href="#wishlist" aria-label="My Wishlist">
+        <svg id="icon-heart" class="icon-heart" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span id="text-wishlist" class="text-wishlist">My Wishlist</span>
+      </a>
+    </div>
+
+    <!-- header-logo-group -->
+    <div id="header-logo-group" class="header-logo-group">
+      <h1 id="logo-main" class="logo-main">MESSIKA</h1>
+      <p id="logo-sub" class="logo-sub">PARIS</p>
+    </div>
+
+    <!-- header-right-group -->
+    <nav id="header-right-group" class="header-right-group" aria-label="Main navigation">
+      <button id="icon-search" class="icon-search header-icon" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      
+      <button id="icon-user" class="icon-user header-icon" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      
+      <button id="icon-phone" class="icon-phone header-icon" aria-label="Contact">
+        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </button>
+      
+      <button id="icon-cart" class="icon-cart header-icon" aria-label="Shopping cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- hero-content-wrapper: z-index 5 -->
+  <section id="hero-content-wrapper" class="hero-content-wrapper">
+    <h2 id="hero-title" class="hero-title">GIFT SELECTION</h2>
+    
+    <a id="hero-cta" class="hero-cta" href="#discover">DISCOVER</a>
+    
+    <div id="hero-scroll-dots" class="hero-scroll-dots" role="presentation" aria-hidden="true">
+      <span id="dot-1" class="dot"></span>
+      <span id="dot-2" class="dot"></span>
+      <span id="dot-3" class="dot"></span>
+    </div>
+  </section>
+</body>
+</html>

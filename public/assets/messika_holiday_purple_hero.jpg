@@ -1,0 +1,50 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#381E55"/>
+  
+  <!-- Gradient overlay for depth -->
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#6B3E8F;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#381E55;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="30%" cy="60%">
+      <stop offset="0%" style="stop-color:#4A2866;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#381E55;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#EFEFEF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C0C0C0;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Purple glossy spheres (background elements) -->
+  <circle cx="350" cy="350" r="180" fill="url(#glow1)" opacity="0.7"/>
+  <circle cx="950" cy="500" r="220" fill="url(#glow2)" opacity="0.6"/>
+  <circle cx="1150" cy="280" r="150" fill="url(#glow1)" opacity="0.5"/>
+  
+  <!-- Silver bangle with diamond detail (simplified representation) -->
+  <ellipse cx="720" cy="450" rx="120" ry="130" fill="none" stroke="url(#silver)" stroke-width="12" opacity="0.95"/>
+  <ellipse cx="720" cy="450" rx="100" ry="110" fill="none" stroke="url(#silver)" stroke-width="8" opacity="0.8"/>
+  
+  <!-- Moving diamonds (3 small highlights on bangle) -->
+  <circle cx="720" cy="320" r="8" fill="#FFFFFF" opacity="0.95">
+    <animate attributeName="opacity" values="0.95;0.7;0.95" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="640" cy="510" r="8" fill="#FFFFFF" opacity="0.95">
+    <animate attributeName="opacity" values="0.7;0.95;0.7" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="800" cy="510" r="8" fill="#FFFFFF" opacity="0.95">
+    <animate attributeName="opacity" values="0.95;0.7;0.95" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Subtle light reflections -->
+  <ellipse cx="320" cy="320" rx="80" ry="90" fill="#FFFFFF" opacity="0.08"/>
+  <ellipse cx="1100" cy="250" rx="60" ry="70" fill="#FFFFFF" opacity="0.06"/>
+  
+  <!-- Text overlay for placeholder indication -->
+  <text x="720" y="780" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" opacity="0.3" text-anchor="middle">
+    Placeholder: messika_holiday_purple_hero.jpg (1440×900px)
+  </text>
+</svg>
