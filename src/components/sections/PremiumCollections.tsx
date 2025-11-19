@@ -9,7 +9,7 @@ const PremiumCollections: React.FC = () => {
     <section
       className="w-full"
       style={{
-        backgroundColor: '#E8E6E1',
+        backgroundColor: '#FFFFFF',
         paddingTop: '60px',
         paddingBottom: '60px',
         minHeight: '100vh',
@@ -37,7 +37,7 @@ const PremiumCollections: React.FC = () => {
             fontWeight: 500,
             letterSpacing: '3px',
             lineHeight: '14px',
-            color: '#9B9B9B',
+            color: '#000000',
             textTransform: 'uppercase',
             marginBottom: '16px',
           }}
@@ -53,14 +53,14 @@ const PremiumCollections: React.FC = () => {
             fontSize: '48px',
             fontWeight: 400,
             lineHeight: '1.15',
-            color: '#3A3A3A',
+            color: '#000000',
             letterSpacing: '-0.8px',
             margin: 0,
             marginBottom: '24px',
             maxWidth: '650px',
           }}
         >
-          Illuminated Artistry
+          Bespoke Stone Collections
         </h2>
 
         {/* CTA Link */}
@@ -72,10 +72,10 @@ const PremiumCollections: React.FC = () => {
             fontSize: '9px',
             fontWeight: 600,
             letterSpacing: '2.2px',
-            color: '#3A3A3A',
+            color: '#000000',
             textTransform: 'uppercase',
             textDecoration: 'none',
-            borderBottom: '1.5px solid #3A3A3A',
+            borderBottom: '1.5px solid #000000',
             paddingBottom: '4px',
             marginBottom: '48px',
             display: 'inline-block',
@@ -102,48 +102,47 @@ const PremiumCollections: React.FC = () => {
               gridColumn: '1',
               position: 'relative',
               width: '100%',
+              height: '656px',
             }}
           >
             <Image
               id="image_landscape"
-              src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=90&w=1600&h=1040&fit=crop&auto=format"
-              alt="Luxurious living room interior with beige sofa, ornate columns, elegant curtains, and framed artwork"
+              src="/assets/MAIA.png"
+              alt="MAIA Bespoke stone furniture collection"
               width={1010}
               height={656}
-              className="w-full h-auto block"
+              className="w-full h-full block"
               style={{
-                objectFit: 'cover',
+                objectFit: 'contain',
                 objectPosition: 'center center',
                 display: 'block',
-                maxHeight: '480px',
               }}
-              unoptimized
             />
           </figure>
 
-          {/* Portrait Image - Ornate Black Wood Detail */}
+          {/* Portrait Video - MAIA Process */}
           <figure
             className="m-0 overflow-hidden"
             style={{
               gridColumn: '2',
               position: 'relative',
               width: '100%',
+              height: '656px',
             }}
           >
-            <Image
-              id="image_portrait"
-              src="https://images.unsplash.com/photo-1545486332-9e0999c535b2?q=90&w=800&h=1230&fit=crop&auto=format"
-              alt="Close-up detail of ornate black lacquered wood with intricate carved silver baroque pattern"
-              width={435}
-              height={669}
-              className="w-full h-auto block"
+            <video
+              id="video_portrait"
+              src="/assets/MAIA.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full block"
               style={{
                 objectFit: 'cover',
-                objectPosition: 'center top',
+                objectPosition: 'center center',
                 display: 'block',
-                maxHeight: '480px',
               }}
-              unoptimized
             />
           </figure>
         </div>

@@ -60,7 +60,7 @@ export default function Footer() {
                 maxWidth: '280px',
               }}
             >
-              A Messika adviser is available by email to respond to all your questions.
+              A MAIA Bespoke adviser is available to discuss your custom stone furniture project and answer all your questions.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Footer() {
                 marginBottom: '12px',
               }}
             >
-              COMPLEMENTARY DELIVERY & RETURNS
+              COMPLIMENTARY CONSULTATION
             </h4>
             <p
               style={{
@@ -102,7 +102,7 @@ export default function Footer() {
                 maxWidth: '280px',
               }}
             >
-              Messika offers complementary delivery and returns on all online orders
+              MAIA Bespoke offers complimentary initial consultations to understand your vision and space requirements.
             </p>
           </div>
 
@@ -117,11 +117,12 @@ export default function Footer() {
               strokeWidth="1"
               style={{ marginBottom: '24px' }}
             >
-              <rect x="4" y="12" width="24" height="16" />
-              <path d="M16 12 L16 28" />
-              <path d="M4 12 L28 12 L28 8 L4 8 Z" />
-              <circle cx="12" cy="8" r="3" fill="none" />
-              <circle cx="20" cy="8" r="3" fill="none" />
+              <rect x="4" y="4" width="24" height="24" rx="2" />
+              <path d="M4 12 L28 12" />
+              <path d="M16 4 L16 28" />
+              <circle cx="10" cy="8" r="1.5" fill="#000" />
+              <circle cx="22" cy="16" r="1.5" fill="#000" />
+              <circle cx="10" cy="20" r="1.5" fill="#000" />
             </svg>
             <h4
               style={{
@@ -133,7 +134,7 @@ export default function Footer() {
                 marginBottom: '12px',
               }}
             >
-              AN EXCLUSIVE GIFT BOX
+              3D VISUALIZATION
             </h4>
             <p
               style={{
@@ -145,7 +146,7 @@ export default function Footer() {
                 maxWidth: '280px',
               }}
             >
-              Your Messika order will be presented in iconic gift packaging
+              Visualize your bespoke piece with detailed 3D models before production begins, ensuring perfect alignment with your vision.
             </p>
           </div>
 
@@ -161,8 +162,10 @@ export default function Footer() {
               style={{ marginBottom: '24px' }}
             >
               <rect x="2" y="8" width="36" height="20" rx="2" />
-              <path d="M2 14 L38 14" />
-              <text x="18" y="22" fontSize="8" fill="#000" fontWeight="bold">x3</text>
+              <path d="M20 8 L26 8 L26 12 L20 12 Z" />
+              <circle cx="12" cy="10" r="1.5" fill="#000" />
+              <circle cx="16" cy="16" r="1.5" fill="#000" />
+              <circle cx="8" cy="20" r="1.5" fill="#000" />
             </svg>
             <h4
               style={{
@@ -174,7 +177,7 @@ export default function Footer() {
                 marginBottom: '12px',
               }}
             >
-              PAY IN INSTALLMENTS
+              MASTER ARTISAN CRAFTSMANSHIP
             </h4>
             <p
               style={{
@@ -186,7 +189,7 @@ export default function Footer() {
                 maxWidth: '280px',
               }}
             >
-              All of our online payments are secure
+              Every piece is meticulously crafted by skilled artisans using premium stone materials with rigorous quality checks.
             </p>
           </div>
         </div>
@@ -220,7 +223,7 @@ export default function Footer() {
                 marginBottom: '10px',
               }}
             >
-              MESSIKA
+              COLLECTIONS
             </h5>
             <Link
               href="#"
@@ -233,16 +236,16 @@ export default function Footer() {
               }}
               className="footer-link"
             >
-              Jewelry
+              Premium Backlit Stone
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              High Jewelry
+              Premium Hard Stone
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Messika Maison
+              Premium Shell Stone
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Our boutiques
+              Wall & Jali Panels
             </Link>
           </div>
 
@@ -258,22 +261,22 @@ export default function Footer() {
                 marginBottom: '10px',
               }}
             >
-              CUSTOMER SERVICE
+              SERVICES
             </h5>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
               Contact us
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Delivery & returns
+              Consultation
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              My account
+              3D Visualization
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Advice & services
+              Custom Design Process
             </Link>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              FAQ
+              Installation
             </Link>
           </div>
 
@@ -289,10 +292,19 @@ export default function Footer() {
                 marginBottom: '10px',
               }}
             >
-              POINTS OF SALE
+              PRODUCTS
             </h5>
             <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Find a boutique
+              Basins & Counters
+            </Link>
+            <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
+              Floors
+            </Link>
+            <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
+              Furniture
+            </Link>
+            <Link href="#" className="footer-link" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none' }}>
+              Knobs & Handles
             </Link>
           </div>
 
@@ -384,27 +396,21 @@ export default function Footer() {
         >
           {/* Left: Legal Links */}
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <span style={{ fontFamily: 'var(--font-montserrat)', fontSize: '11px', color: '#FFFFFF' }}>©Messika</span>
+            <span style={{ fontFamily: 'var(--font-montserrat)', fontSize: '11px', color: '#FFFFFF' }}>©MAIA Bespoke</span>
             <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
               Legal mentions
             </Link>
             <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Confidentiality
+              Privacy Policy
             </Link>
             <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
               Cookie policy
             </Link>
             <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Terms of sale
-            </Link>
-            <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Terms of use
+              Terms of service
             </Link>
             <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
               Sitemap
-            </Link>
-            <Link href="#" style={{ fontSize: '11px', color: '#FFFFFF', textDecoration: 'none' }}>
-              Accessibility statement
             </Link>
           </div>
 
@@ -424,7 +430,7 @@ export default function Footer() {
               }}
             >
               <span style={{ fontSize: '11px', color: '#666666' }}>Country / Region</span>
-              <span style={{ fontSize: '11px', color: '#FFFFFF' }}>Messika United States</span>
+              <span style={{ fontSize: '11px', color: '#FFFFFF' }}>MAIA Bespoke Global</span>
               <svg width="8" height="5" viewBox="0 0 8 5" fill="white">
                 <path d="M0 0 L4 5 L8 0 Z" />
               </svg>

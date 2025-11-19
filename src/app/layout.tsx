@@ -1,42 +1,21 @@
 import type { Metadata } from 'next'
-import { Montserrat, Oswald, Playfair_Display, Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-montserrat',
   display: 'swap',
 })
 
-const oswald = Oswald({
-  subsets: ['latin'],
-  weight: ['700'],
-  variable: '--font-oswald',
-  display: 'swap',
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
 export const metadata: Metadata = {
-  title: 'MESSIKA PARIS - Gift Selection',
-  description: 'Messika Paris luxury jewelry featuring the moving diamond bangle collection. Discover our exclusive gift selection.',
-  keywords: ['Messika', 'Paris', 'Jewelry', 'Luxury', 'Diamonds', 'Gift Selection'],
+  title: 'MAIA Bespoke - Luxury Stone Furniture',
+  description: 'MAIA Bespoke crafts aesthetic and desirable works of art in bespoke stone furniture. Discover an elucidated world of extravagance with incomparable perfection.',
+  keywords: ['MAIA Bespoke', 'Bespoke Furniture', 'Stone Furniture', 'Luxury Furniture', 'Custom Furniture', 'Backlit Stone', 'Hard Stone', 'Shell Stone', 'Premium Collections'],
   openGraph: {
-    title: 'MESSIKA PARIS - Gift Selection',
-    description: 'Discover Messika Paris exclusive gift selection',
+    title: 'MAIA Bespoke - Luxury Stone Furniture',
+    description: 'Discover bespoke stone furniture crafted to incomparable perfection',
     type: 'website',
   },
 }
@@ -47,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${oswald.variable} ${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={montserrat.variable}>
       <body className={montserrat.className}>{children}</body>
     </html>
   )

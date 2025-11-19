@@ -9,26 +9,26 @@ const StorytellingSection: React.FC = () => {
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=85&w=1000&h=1400&fit=crop&auto=format',
+      image: '/assets/P.jpeg',
       step: 'Step 1',
-      heading: 'WELCOME',
-      text: "A person's character can be sensed from a mere handshake. The same goes for entering a hotel lobby. As an idea incubator, La Bottega searches for the necessary elements to create an experiential path for the guest.",
+      heading: 'CONSULTATION',
+      text: "Your journey begins with an initial consultation where we understand your needs, preferences, and vision. This collaborative approach ensures we capture the essence of what makes your space uniquely yours, mitigating risk and ensuring the final product perfectly fits its intended environment.",
       hasChevron: false,
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=85&w=1000&h=1400&fit=crop&auto=format',
+      image: '/assets/Pi.jpeg',
       step: 'Step 2',
-      heading: 'CONCEPT MOOD',
-      text: 'Hotels can choose to offer different comforts, and these are the inspirational ingredients that La Bottega combines to create projects that reflect the message of "hospitality" with which the hotel wants to welcome its customers.',
+      heading: 'VISUALIZATION',
+      text: 'From inspiration-driven concept sketches to detailed three-dimensional models, we bring your vision to life before production begins. These visualization tools are crucial for high-cost, one-of-a-kind projects, offering you complete confidence in the final piece.',
       hasChevron: false,
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=85&w=1000&h=1400&fit=crop&auto=format',
+      image: '/assets/NJP.jpg',
       step: 'Step 3',
-      heading: 'DESIGN',
-      text: 'Every detail is crafted with precision and care, creating spaces that tell stories and evoke emotions in the hearts of guests.',
+      heading: 'CREATION',
+      text: 'Skilled artisans meticulously craft your bespoke stone furniture using carefully selected premium materials. Every detail receives precision and care, culminating in rigorous quality checks and professional installation—transforming raw stone into an incomparable work of art.',
       hasChevron: false,
     },
   ];
@@ -43,8 +43,9 @@ const StorytellingSection: React.FC = () => {
 
   return (
     <section
-      className="w-full bg-white"
+      className="w-full"
       style={{
+        background: '#FFFFFF',
         minHeight: '100vh',
         position: 'relative',
         overflow: 'hidden',
@@ -64,40 +65,40 @@ const StorytellingSection: React.FC = () => {
           position: 'relative',
         }}
       >
-        <div
+                <div
           style={{
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)',
             fontStyle: 'italic',
-            color: '#1A1A1A',
+            color: '#000000',
             marginBottom: '0.2em',
           }}
         >
-          We are the
+          Some creations are imagined.
         </div>
         <div
           style={{
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: 'clamp(2.5rem, 5vw, 5rem)',
             fontWeight: 700,
             letterSpacing: '0.02em',
             textTransform: 'uppercase',
-            color: '#1A1A1A',
+            color: '#000000',
             lineHeight: '1',
           }}
         >
-          STORYTELLERS
+          OURS ARE BUILT
         </div>
         <div
           style={{
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)',
             fontStyle: 'italic',
-            color: '#1A1A1A',
+            color: '#000000',
             marginTop: '0.2em',
           }}
         >
-          of the HOTELLERIE
+          from vision.
         </div>
       </div>
 
@@ -118,10 +119,10 @@ const StorytellingSection: React.FC = () => {
             position: 'absolute',
             left: 'calc(clamp(2rem, 5vw, 5rem) + 1.5rem)',
             bottom: '10%',
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: '4rem',
             fontWeight: 400,
-            color: '#1A1A1A',
+            color: '#000000',
             zIndex: 1,
           }}
         >
@@ -198,38 +199,6 @@ const StorytellingSection: React.FC = () => {
           </button>
         )}
 
-        {/* Floating FAB */}
-        <button
-          aria-label="Contact us"
-          style={{
-            position: 'fixed',
-            bottom: '30px',
-            right: '30px',
-            width: '50px',
-            height: '50px',
-            backgroundColor: '#E0E0E0',
-            borderRadius: '50%',
-            zIndex: 100,
-            border: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#D0D0D0';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#E0E0E0';
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-            <polyline points="22,6 12,13 2,6" />
-          </svg>
-        </button>
-
         {/* Content Wrapper (No Rotation) */}
         <div
           style={{
@@ -281,15 +250,15 @@ const StorytellingSection: React.FC = () => {
                 top: '10%',
                 width: 'clamp(450px, 38vw, 600px)',
                 minHeight: 'clamp(350px, 40vh, 550px)',
-                background: '#F8F8F8',
+                background: '#FFFFFF',
                 padding: '3.5rem 3rem',
-                boxShadow: '0px 20px 50px rgba(0, 0, 0, 0.12)',
+                boxShadow: '0px 20px 50px rgba(0, 0, 0, 0.15)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 zIndex: 20,
                 borderRadius: '2px',
-                border: '1px solid #E8E8E8',
+                border: '2px solid #000000',
               }}
             >
               {/* Meta Label */}
@@ -299,7 +268,7 @@ const StorytellingSection: React.FC = () => {
                   textTransform: 'uppercase',
                   fontSize: '0.75rem',
                   letterSpacing: '3px',
-                  color: '#999999',
+                  color: '#666666',
                   marginBottom: '1.5rem',
                   fontWeight: 600,
                 }}
@@ -310,10 +279,10 @@ const StorytellingSection: React.FC = () => {
               {/* Heading */}
               <h3
                 style={{
-                  fontFamily: 'var(--font-playfair)',
+                  fontFamily: 'var(--font-montserrat)',
                   fontWeight: 700,
                   fontSize: '2.75rem',
-                  color: '#1A1A1A',
+                  color: '#000000',
                   margin: 0,
                   marginBottom: '2rem',
                   lineHeight: '1.1',
@@ -328,7 +297,7 @@ const StorytellingSection: React.FC = () => {
                 style={{
                   width: '60px',
                   height: '3px',
-                  backgroundColor: '#D4AF37',
+                  backgroundColor: '#000000',
                   marginBottom: '2.5rem',
                 }}
               />
@@ -339,7 +308,7 @@ const StorytellingSection: React.FC = () => {
                   fontFamily: 'var(--font-montserrat)',
                   fontSize: '1rem',
                   lineHeight: '1.9',
-                  color: '#666666',
+                  color: '#333333',
                   margin: 0,
                   fontWeight: 400,
                 }}

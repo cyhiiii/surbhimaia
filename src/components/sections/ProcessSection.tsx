@@ -7,8 +7,8 @@ export default function ProcessSection() {
   return (
     <section
       style={{
-        backgroundColor: '#000000',
-        color: '#FFFFFF',
+        backgroundColor: '#FFFFFF',
+        color: '#000000',
         width: '100%',
         minHeight: '600px',
         display: 'flex',
@@ -34,56 +34,56 @@ export default function ProcessSection() {
         {/* Main Heading */}
         <h2
           style={{
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: '40px',
             lineHeight: '1.2',
-            fontWeight: 400,
-            color: '#FFFFFF',
+            fontWeight: 700,
+            color: '#000000',
             textTransform: 'uppercase',
             letterSpacing: '1px',
             marginBottom: '0',
           }}
         >
-          THE MAIA PROCESS — FROM VISION TO REALITY
+          THE MAIA BESPOKE PROCESS — FROM VISION TO REALITY
         </h2>
 
         {/* Body Text 1 */}
         <p
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: '16px',
             lineHeight: '1.6',
             fontWeight: 300,
-            color: '#E0E0E0',
+            color: '#333333',
             textAlign: 'left',
             margin: 0,
           }}
         >
-          Our journey begins with inspiration and evolves through concept sketches to three-dimensional models. Each creation is a collaborative masterpiece between client vision and master artisan craftsmanship.
+          Our journey begins with an initial consultation to understand your vision, followed by inspiration-driven concept sketches that evolve into precise three-dimensional models. Each creation is a collaborative masterpiece between your vision and our master artisan craftsmanship.
         </p>
 
         {/* Body Text 2 */}
         <p
           style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: '16px',
             lineHeight: '1.6',
             fontWeight: 300,
-            color: '#E0E0E0',
+            color: '#333333',
             textAlign: 'left',
             margin: 0,
           }}
         >
-          From consultation to visualization, material selection to skilled production, every step ensures your bespoke luxury fixtures achieve incomparable perfection. We don&apos;t just create products —we craft extravagant works of art.
+          From consultation to visualization tools, material selection to skilled production, culminating in final quality checks and installation—every step ensures your bespoke stone furniture achieves incomparable perfection. We don&apos;t just create products, we craft aesthetic and desirable works of art.
         </p>
 
         {/* CTA Button */}
         <button
           style={{
             backgroundColor: 'transparent',
-            border: '1px solid #FFFFFF',
-            color: '#FFFFFF',
-            fontFamily: 'var(--font-inter)',
+            border: '1px solid #000000',
+            color: '#000000',
+            fontFamily: 'var(--font-montserrat)',
             fontSize: '13px',
             fontWeight: 500,
             textTransform: 'uppercase',
@@ -94,15 +94,17 @@ export default function ProcessSection() {
             marginTop: '16px',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#FFFFFF';
-            e.currentTarget.style.color = '#000000';
+            e.currentTarget.style.backgroundColor = '#000000';
+            e.currentTarget.style.color = '#FFFFFF';
+            e.currentTarget.style.borderColor = '#000000';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'transparent';
-            e.currentTarget.style.color = '#FFFFFF';
+            e.currentTarget.style.color = '#000000';
+            e.currentTarget.style.borderColor = '#000000';
           }}
         >
-          DISCOVER OUR PROCESS →
+          EXPLORE OUR PROCESS →
         </button>
       </div>
 
@@ -116,8 +118,8 @@ export default function ProcessSection() {
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=1200&h=900&fit=crop&q=80"
-          alt="Artisan hands carving a green malachite stone on a grinding wheel"
+          src="/assets/India.png"
+          alt="MAIA Bespoke craftsmanship in India"
           width={660}
           height={500}
           style={{
@@ -126,7 +128,6 @@ export default function ProcessSection() {
             display: 'block',
             objectFit: 'cover',
           }}
-          unoptimized
         />
       </div>
     </section>

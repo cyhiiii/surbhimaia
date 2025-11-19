@@ -99,7 +99,7 @@ const Header: React.FC = () => {
               letterSpacing: '1.5px',
             }}
           >
-            MESSIKA
+            MAIA
           </h1>
           <p
             id="logo-sub"
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
               marginTop: '2px',
             }}
           >
-            PARIS
+            BESPOKE
           </p>
         </div>
 
