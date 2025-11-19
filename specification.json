@@ -1,0 +1,521 @@
+{
+  "pages": [
+    {
+      "order": 1,
+      "state_name": "homepage_hero_default",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "device": "desktop"
+      },
+      "canvas_size": {
+        "width_px": 1440,
+        "height_px": 900
+      },
+      "global_styles": {
+        "base_font_family": "\"Gill Sans\", \"Gill Sans MT\", Calibri, sans-serif",
+        "base_font_size_px": 16,
+        "color_palette": [
+          { "name": "white", "hex": "#FFFFFF" },
+          { "name": "black", "hex": "#000000" },
+          { "name": "hero_purple", "hex": "#241835" }
+        ],
+        "grid": {
+          "columns": 12,
+          "gutter_px": 24,
+          "max_width_px": 1440
+        }
+      },
+      "elements": [
+        {
+          "id": "hero-background",
+          "type": "container",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "layout": {
+            "display": "block",
+            "position": "absolute"
+          },
+          "computed_css": {
+            "background_color": "#241835",
+            "background_image": "url('assets/purple-spheres-bg.jpg')",
+            "background_size": "cover",
+            "background_position": "center",
+            "z_index": 0
+          },
+          "notes": "Full screen hero background containing 3D rendered purple spheres.",
+          "confidence": 0.95
+        },
+        {
+          "id": "main-header",
+          "type": "header",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 80,
+          "layout": {
+            "display": "flex",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "padding_left": 40,
+            "padding_right": 40
+          },
+          "children_order": ["header-left", "header-logo", "header-right"],
+          "computed_css": {
+            "background": "transparent",
+            "color": "#FFFFFF",
+            "position": "fixed",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "z_index": 100
+          },
+          "notes": "Header is transparent overlay in default state. Text/Icons are white.",
+          "confidence": 0.98
+        },
+        {
+          "id": "header-left",
+          "type": "container",
+          "x": 40,
+          "y": 28,
+          "width": 150,
+          "height": 24,
+          "layout": { "display": "flex", "gap": 24, "alignItems": "center" },
+          "children_order": ["hamburger-icon", "wishlist-link"],
+          "computed_css": { "color": "#FFFFFF" },
+          "confidence": 0.9
+        },
+        {
+          "id": "hamburger-icon",
+          "type": "icon",
+          "width": 24,
+          "height": 24,
+          "computed_css": { "fill": "#FFFFFF", "cursor": "pointer" },
+          "notes": "Standard 3-line menu icon (hamburger)",
+          "confidence": 0.95
+        },
+        {
+          "id": "wishlist-link",
+          "type": "link",
+          "layout": { "display": "flex", "gap": 8, "alignItems": "center" },
+          "raw_text": "My Wishlist",
+          "rendered_text": "My Wishlist",
+          "computed_css": {
+            "font_family": "sans-serif",
+            "font_size_px": 13,
+            "font_weight": 400,
+            "text_transform": "none",
+            "color": "#FFFFFF",
+            "letter_spacing_px": 0.5
+          },
+          "notes": "Includes heart icon outline on left of text",
+          "confidence": 0.9
+        },
+        {
+          "id": "header-logo",
+          "type": "image",
+          "x": 645,
+          "y": 25,
+          "width": 150,
+          "height": 30,
+          "assets": [
+            {
+              "name": "messika-logo-white.svg",
+              "type": "svg",
+              "original_dimensions_px": { "w": 300, "h": 60 },
+              "rendered_dimensions_px": { "w": 150, "h": 30 },
+              "alt_text": "Messika Paris"
+            }
+          ],
+          "computed_css": { "object_fit": "contain" },
+          "notes": "Centered exactly in viewport",
+          "confidence": 0.99
+        },
+        {
+          "id": "header-right",
+          "type": "container",
+          "layout": { "display": "flex", "gap": 24, "alignItems": "center" },
+          "children_order": ["icon-search", "icon-profile", "icon-phone", "icon-bag"],
+          "computed_css": { "color": "#FFFFFF" },
+          "notes": "Icons are approx 20x20px stroke SVGs",
+          "confidence": 0.95
+        },
+        {
+          "id": "hero-product-image",
+          "type": "image",
+          "x": 420,
+          "y": 150,
+          "width": 600,
+          "height": 450,
+          "assets": [
+            {
+              "name": "move-noa-bangle-silver.png",
+              "type": "png",
+              "rendered_dimensions_px": { "w": 600, "h": 450 },
+              "alt_text": "Messika Move Noa Diamond Bracelet"
+            }
+          ],
+          "computed_css": {
+            "position": "absolute",
+            "left": "50%",
+            "top": "50%",
+            "transform": "translate(-50%, -60%)",
+            "z_index": 5
+          },
+          "notes": "The bracelet floats in center. 'MESSIKA' engraved text visible on inside of bangle.",
+          "confidence": 0.9
+        },
+        {
+          "id": "hero-text-container",
+          "type": "container",
+          "x": 570,
+          "y": 700,
+          "width": 300,
+          "height": 100,
+          "layout": {
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "gap": 16
+          },
+          "computed_css": {
+            "position": "absolute",
+            "bottom": "15%",
+            "left": "50%",
+            "transform": "translateX(-50%)",
+            "z_index": 10,
+            "text_align": "center"
+          },
+          "children_order": ["hero-headline", "hero-cta"]
+        },
+        {
+          "id": "hero-headline",
+          "type": "text",
+          "raw_text": "GIFT SELECTION",
+          "rendered_text": "GIFT SELECTION",
+          "computed_css": {
+            "font_family": "Oswald, 'Bebas Neue', sans-serif",
+            "font_size_px": 42,
+            "font_weight": 700,
+            "color": "#FFFFFF",
+            "text_transform": "uppercase",
+            "letter_spacing_px": 1,
+            "line_height_px": 48
+          },
+          "confidence": 0.95
+        },
+        {
+          "id": "hero-cta",
+          "type": "link",
+          "raw_text": "DISCOVER",
+          "rendered_text": "DISCOVER",
+          "computed_css": {
+            "font_family": "sans-serif",
+            "font_size_px": 12,
+            "font_weight": 600,
+            "color": "#FFFFFF",
+            "text_transform": "uppercase",
+            "text_decoration": "underline",
+            "text_underline_offset": "4px",
+            "letter_spacing_px": 1.5
+          },
+          "confidence": 0.9
+        },
+        {
+          "id": "pagination-dots",
+          "type": "container",
+          "x": 710,
+          "y": 850,
+          "layout": { "display": "flex", "gap": 12, "justifyContent": "center" },
+          "computed_css": {
+            "position": "absolute",
+            "bottom": "40px",
+            "left": "50%",
+            "transform": "translateX(-50%)"
+          },
+          "children_order": ["dot-1", "dot-2", "dot-3"],
+          "notes": "3 dots vertical stack. Middle one is active (white), others faded.",
+          "confidence": 0.85
+        }
+      ],
+      "html_snippet": "<section class=\"hero\" style=\"height: 100vh; background: #241835; position: relative;\">\n  <header style=\"position: fixed; width: 100%; display: flex; justify-content: space-between; padding: 0 40px; top: 0; height: 80px; align-items: center; z-index: 100;\">\n    <div class=\"left\">...</div>\n    <img src=\"logo.svg\" class=\"center\" />\n    <div class=\"right\">...</div>\n  </header>\n  <div class=\"content-center\" style=\"position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;\">\n    <img src=\"bracelet.png\" style=\"max-width: 600px;\" />\n    <h1 style=\"color: white; font-family: 'Oswald'; font-size: 42px;\">GIFT SELECTION</h1>\n    <a href=\"#\" style=\"color: white; text-decoration: underline;\">DISCOVER</a>\n  </div>\n</section>",
+      "uncertainties": [
+        {
+          "field": "font_family_hero",
+          "assumption": "Oswald or custom condensed",
+          "confidence": 0.7,
+          "explanation": "Font is condensed sans-serif, specific identity font."
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "state_name": "menu_open_state",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "device": "desktop"
+      },
+      "canvas_size": {
+        "width_px": 1440,
+        "height_px": 900
+      },
+      "global_styles": {
+        "base_font_family": "sans-serif",
+        "color_palette": [
+          { "name": "text_black", "hex": "#000000" },
+          { "name": "bg_white", "hex": "#FFFFFF" }
+        ]
+      },
+      "elements": [
+        {
+          "id": "menu-drawer",
+          "type": "container",
+          "x": 0,
+          "y": 0,
+          "width": 480,
+          "height": 900,
+          "layout": {
+            "display": "flex",
+            "flexDirection": "column",
+            "padding_top": 0,
+            "padding_bottom": 40
+          },
+          "computed_css": {
+            "background_color": "#FFFFFF",
+            "position": "fixed",
+            "left": 0,
+            "top": 0,
+            "bottom": 0,
+            "z_index": 200,
+            "box_shadow": "5px 0 15px rgba(0,0,0,0.05)"
+          },
+          "notes": "Sidebar menu covers approx 33% of screen width (480px).",
+          "confidence": 0.95
+        },
+        {
+          "id": "menu-header",
+          "type": "container",
+          "x": 0,
+          "y": 0,
+          "width": 480,
+          "height": 80,
+          "layout": {
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "flex-start",
+            "padding_left": 40,
+            "gap": 24
+          },
+          "children_order": ["close-icon", "menu-wishlist"],
+          "computed_css": {
+            "border_bottom": "none"
+          }
+        },
+        {
+          "id": "close-icon",
+          "type": "icon",
+          "width": 20,
+          "height": 20,
+          "computed_css": {
+            "fill": "#000000",
+            "cursor": "pointer"
+          },
+          "notes": "X icon, thin stroke",
+          "confidence": 0.95
+        },
+        {
+          "id": "menu-wishlist",
+          "type": "link",
+          "raw_text": "My Wishlist",
+          "rendered_text": "My Wishlist",
+          "computed_css": {
+            "color": "#000000",
+            "font_size_px": 13,
+            "font_family": "sans-serif"
+          },
+          "notes": "Includes heart icon (stroke black) on left",
+          "confidence": 0.95
+        },
+        {
+          "id": "main-nav-list",
+          "type": "list",
+          "x": 0,
+          "y": 100,
+          "width": 480,
+          "layout": {
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": 0
+          },
+          "children_order": [
+            "nav-item-1", "nav-item-2", "nav-item-3", "nav-item-4", "nav-item-5", "nav-item-6", "nav-item-boutiques"
+          ],
+          "computed_css": {
+            "padding_top": 20,
+            "padding_bottom": 40
+          }
+        },
+        {
+          "id": "nav-item-generic",
+          "type": "link_block",
+          "layout": {
+            "display": "flex",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "padding": "18px 40px"
+          },
+          "computed_css": {
+            "color": "#000000",
+            "text_decoration": "none",
+            "cursor": "pointer"
+          },
+          "notes": "Pattern for all list items. Chevron right icon on right side."
+        },
+        {
+          "id": "nav-item-1",
+          "type": "text",
+          "raw_text": "MOVE: THE ICON",
+          "rendered_text": "MOVE: THE ICON",
+          "computed_css": {
+            "font_family": "sans-serif",
+            "font_size_px": 14,
+            "text_transform": "uppercase",
+            "letter_spacing_px": 0.5
+          },
+          "confidence": 0.98
+        },
+        {
+          "id": "nav-item-boutiques",
+          "type": "text",
+          "raw_text": "OUR BOUTIQUES",
+          "rendered_text": "OUR BOUTIQUES",
+          "computed_css": {
+            "margin_top": 20,
+            "padding_top": 20,
+            "border_top": "1px solid #EEEEEE",
+            "font_family": "sans-serif",
+            "font_size_px": 14,
+            "text_transform": "uppercase"
+          },
+          "notes": "Separated from main list by whitespace/border",
+          "confidence": 0.9
+        },
+        {
+          "id": "utility-footer",
+          "type": "container",
+          "x": 40,
+          "y": 600,
+          "width": 400,
+          "layout": {
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": 20
+          },
+          "children_order": ["login-link", "fav-link", "help-link", "services-link", "contrast-toggle"],
+          "computed_css": {
+            "margin_top": "auto",
+            "padding_left": 40
+          }
+        },
+        {
+          "id": "login-link",
+          "type": "link",
+          "raw_text": "Login",
+          "rendered_text": "Login",
+          "computed_css": {
+            "font_size_px": 13,
+            "color": "#000000",
+            "display": "flex",
+            "align_items": "center",
+            "gap": "12px"
+          },
+          "notes": "User icon outline on left",
+          "confidence": 0.95
+        },
+        {
+          "id": "contrast-toggle",
+          "type": "input",
+          "raw_text": "Increase contrast",
+          "rendered_text": "Increase contrast",
+          "computed_css": {
+            "display": "flex",
+            "align_items": "center",
+            "gap": "12px",
+            "font_size_px": 12,
+            "color": "#000000"
+          },
+          "notes": "Toggle switch UI element on left. Inactive state (grey).",
+          "confidence": 0.9
+        },
+        {
+          "id": "main-header-white",
+          "type": "header",
+          "x": 480,
+          "y": 0,
+          "width": 960,
+          "height": 80,
+          "layout": {
+             "display": "flex",
+             "justifyContent": "flex-end",
+             "alignItems": "center",
+             "padding_right": 40
+          },
+          "computed_css": {
+            "background_color": "#FFFFFF",
+            "position": "fixed",
+            "top": 0,
+            "right": 0,
+            "z_index": 190
+          },
+          "children_order": ["logo-black", "header-right-black"],
+          "notes": "When menu opens, header background becomes white. Logo colors invert to black.",
+          "confidence": 0.95
+        },
+        {
+          "id": "logo-black",
+          "type": "image",
+          "x": 720,
+          "y": 25,
+          "computed_css": {
+             "position": "absolute",
+             "left": "50%",
+             "transform": "translateX(-50%)"
+          },
+          "assets": [{ "name": "messika-logo-black.svg", "type": "svg", "alt_text": "Messika Paris Black" }]
+        }
+      ],
+      "css_snippet": ".menu-drawer { width: 480px; background: white; height: 100vh; position: fixed; z-index: 200; display: flex; flex-direction: column; } .nav-item { padding: 18px 40px; display: flex; justify-content: space-between; text-transform: uppercase; font-size: 14px; cursor: pointer; } .nav-item:hover { background: #f9f9f9; }",
+      "uncertainties": [
+        {
+           "field": "menu_width",
+           "assumption": "33.33% of viewport or fixed 480px",
+           "confidence": 0.85,
+           "explanation": "Visual estimation based on 1440px canvas."
+        }
+      ]
+    }
+  ],
+  "implementation_priority": [
+    "Global Typography & Reset",
+    "Hero Section (Page 1) - Layout & Background",
+    "Header (Transparent State)",
+    "Menu Drawer Structure (Page 2)",
+    "Menu Interaction (Open/Close State Toggle)",
+    "Responsive Logic (Mobile View)"
+  ],
+  "qa_checks": [
+    "Verify Hero Text 'GIFT SELECTION' is centered horizontally and positioned 15% from bottom.",
+    "Ensure Menu Drawer width is exactly 480px on desktop (1440px+).",
+    "Check that Header logo switches from White to Black when Menu opens.",
+    "Validate that the 'Close' X icon aligns vertically with the Header icons (approx 28px from top).",
+    "Confirm 'Increase Contrast' toggle presence at bottom of menu."
+  ],
+  "export_instructions": {
+    "assets": "Export logo as SVG (white and black variants). Export Hero background as high-res JPG (2000px width). Export Bangle product image as transparent PNG.",
+    "icons": "Use Feather Icons or similar thin-stroke SVG library for User, Heart, Search, Bag, Hamburger, Close."
+  },
+  "notes": "Analysis assumes a 1440px desktop viewport. The design uses a high-contrast 'Dark Mode' for the hero and a clean 'Light Mode' for the navigation drawer. The transition between states implies a z-index overlay or a state change on the header container."
+}

@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       >
         <video
           id="hero-video"
-          src="https://res.cloudinary.com/dr0yyey6x/video/upload/q_auto,f_auto/tree_01_uqlkgl.mp4"
+          src="https://res.cloudinary.com/dr0yyey6x/video/upload/v1763565775/14562815_1920_1080_25fps_owv7fc.mp4"
           autoPlay
           loop
           muted
@@ -40,41 +40,47 @@ const Hero: React.FC = () => {
           zIndex: 5,
         }}
       >
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes dot-flow {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+          }
+        `}} />
         <div
           id="hero-scroll-dots"
           className="flex flex-col items-center"
-          style={{ gap: '8px' }}
+          style={{ gap: '12px' }}
           role="presentation"
           aria-hidden="true"
         >
           <span
             id="dot-1"
-            className="bg-white rounded-full animate-pulse"
+            className="bg-white rounded-full"
             style={{
-              width: '8px',
-              height: '8px',
-              opacity: 1,
+              width: '6px',
+              height: '6px',
+              animation: 'dot-flow 1.5s ease-in-out infinite',
               animationDelay: '0s',
             }}
           />
           <span
             id="dot-2"
-            className="bg-white rounded-full animate-pulse"
+            className="bg-white rounded-full"
             style={{
-              width: '8px',
-              height: '8px',
-              opacity: 1,
-              animationDelay: '0.2s',
+              width: '6px',
+              height: '6px',
+              animation: 'dot-flow 1.5s ease-in-out infinite',
+              animationDelay: '0.3s',
             }}
           />
           <span
             id="dot-3"
-            className="bg-white rounded-full animate-pulse"
+            className="bg-white rounded-full"
             style={{
-              width: '8px',
-              height: '8px',
-              opacity: 1,
-              animationDelay: '0.4s',
+              width: '6px',
+              height: '6px',
+              animation: 'dot-flow 1.5s ease-in-out infinite',
+              animationDelay: '0.6s',
             }}
           />
         </div>

@@ -1,10 +1,48 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 const StorytellingSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const [cursorMode, setCursorMode] = useState<'left' | 'right' | 'default'>('default');
+  const headerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lastMouseX = useRef<number | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsHeaderVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Update cursor when slide changes
+  useEffect(() => {
+    if (lastMouseX.current !== null && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = lastMouseX.current - rect.left;
+      const isLeft = x < rect.width / 2;
+
+      if (isLeft) {
+        setCursorMode(currentSlide > 0 ? 'left' : 'default');
+      } else {
+        setCursorMode(currentSlide < slides.length - 1 ? 'right' : 'default');
+      }
+    }
+  }, [currentSlide]);
 
   const slides = [
     {
@@ -34,47 +72,74 @@ const StorytellingSection: React.FC = () => {
   ];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    lastMouseX.current = e.clientX;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const isLeft = x < rect.width / 2;
+
+    if (isLeft) {
+      setCursorMode(currentSlide > 0 ? 'left' : 'default');
+    } else {
+      setCursorMode(currentSlide < slides.length - 1 ? 'right' : 'default');
+    }
+  };
+
+  const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const isLeft = x < rect.width / 2;
+
+    if (isLeft) {
+      prevSlide();
+    } else {
+      nextSlide();
+    }
+  };
+
+  const getCursorStyle = () => {
+    // Using 32x32 SVGs for better cross-browser/OS compatibility
+    const leftSvg = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15" stroke="black" stroke-width="1.5" fill="white" fill-opacity="0.9"/><path d="M19 10L11 16L19 22" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    const rightSvg = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15" stroke="black" stroke-width="1.5" fill="white" fill-opacity="0.9"/><path d="M13 10L21 16L13 22" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    
+    const leftCursor = `url("data:image/svg+xml,${encodeURIComponent(leftSvg)}") 16 16, pointer`;
+    const rightCursor = `url("data:image/svg+xml,${encodeURIComponent(rightSvg)}") 16 16, pointer`;
+    
+    if (cursorMode === 'left') return leftCursor;
+    if (cursorMode === 'right') return rightCursor;
+    return 'default';
   };
 
   return (
     <section
-      className="w-full"
-      style={{
-        background: '#FFFFFF',
-        minHeight: '100vh',
-        position: 'relative',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 'clamp(2rem, 5vw, 5rem) clamp(2rem, 5vw, 5rem)',
-      }}
+      className="w-full min-h-screen relative overflow-hidden flex flex-col justify-center items-center p-[clamp(2rem,5vw,5rem)] z-10"
     >
       {/* Hero Header */}
-      <div
-        style={{
-          textAlign: 'center',
-          marginBottom: 'clamp(3rem, 5vh, 5rem)',
-          zIndex: 10,
-          position: 'relative',
-        }}
+      <div 
+        ref={headerRef}
+        className="text-center mb-[clamp(3rem,5vh,5rem)] z-10 relative"
       >
-                <div
+        <div
           style={{
             fontFamily: 'var(--font-montserrat)',
             fontSize: 'clamp(1.5rem, 2.5vw, 2.5rem)',
             fontStyle: 'italic',
             color: '#000000',
             marginBottom: '0.2em',
+            opacity: isHeaderVisible ? 1 : 0,
+            transform: isHeaderVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
           }}
         >
-          Some creations are imagined.
+          "Some creations are imagined.
         </div>
         <div
           style={{
@@ -85,6 +150,9 @@ const StorytellingSection: React.FC = () => {
             textTransform: 'uppercase',
             color: '#000000',
             lineHeight: '1',
+            opacity: isHeaderVisible ? 1 : 0,
+            transform: isHeaderVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s',
           }}
         >
           OURS ARE BUILT
@@ -96,14 +164,21 @@ const StorytellingSection: React.FC = () => {
             fontStyle: 'italic',
             color: '#000000',
             marginTop: '0.2em',
+            opacity: isHeaderVisible ? 1 : 0,
+            transform: isHeaderVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.8s ease-out 1.6s, transform 0.8s ease-out 1.6s',
           }}
         >
-          from vision.
+          from vision."
         </div>
       </div>
 
       {/* Carousel Section */}
       <div
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setCursorMode('default')}
+        onClick={handleContainerClick}
         style={{
           position: 'relative',
           width: '100%',
@@ -111,6 +186,7 @@ const StorytellingSection: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'center',
           flex: '1',
+          cursor: getCursorStyle(),
         }}
       >
         {/* Pagination Counter */}
@@ -129,75 +205,8 @@ const StorytellingSection: React.FC = () => {
           {currentSlide + 1}/{slides.length}
         </div>
 
-        {/* Previous Arrow (visible on steps 2, 3) */}
-        {currentSlide >= 1 && (
-          <button
-            onClick={prevSlide}
-            aria-label="Previous slide"
-            style={{
-              position: 'absolute',
-              left: 'calc(clamp(2rem, 5vw, 5rem) - 20px)',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: '50px',
-              height: '50px',
-              border: '1px solid #E5E5E5',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              background: '#F0F0F0',
-              zIndex: 50,
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#E0E0E0';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#F0F0F0';
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-        )}
-
-        {/* Next Arrow (visible on steps 1, 2) */}
-        {currentSlide < slides.length - 1 && (
-          <button
-            onClick={nextSlide}
-            aria-label="Next slide"
-            style={{
-              position: 'absolute',
-              right: 'calc(clamp(2rem, 5vw, 5rem) - 20px)',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: '50px',
-              height: '50px',
-              border: '1px solid #E5E5E5',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              background: '#F0F0F0',
-              zIndex: 50,
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#E0E0E0';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#F0F0F0';
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        )}
+        {/* Previous Arrow removed */}
+        {/* Next Arrow removed */}
 
         {/* Content Wrapper (No Rotation) */}
         <div

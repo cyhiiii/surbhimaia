@@ -56,6 +56,15 @@ const config: Config = {
       margin: {
         'grid': '40px',
       },
+      keyframes: {
+        'slide-in-left': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'slide-in-left': 'slide-in-left 0.3s ease-out forwards',
+      },
     },
   },
   plugins: [],

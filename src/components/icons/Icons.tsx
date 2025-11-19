@@ -109,3 +109,38 @@ export const CartIcon: React.FC<IconProps> = ({ className = '', 'aria-label': ar
     <path d="M16 10a4 4 0 0 1-8 0" />
   </svg>
 );
+
+export const CloseIcon: React.FC<IconProps> = ({ className = '', 'aria-label': ariaLabel }) => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    fill="none"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-label={ariaLabel}
+  >
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
+export const ChevronRightIcon: React.FC<IconProps> = ({ className = '', 'aria-label': ariaLabel }) => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    fill="none"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-label={ariaLabel}
+  >
+    <polyline points="9 18 15 12 9 6" />
+  </svg>
+);

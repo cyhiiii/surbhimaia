@@ -7,40 +7,16 @@ import Link from 'next/link';
 const PremiumCollections: React.FC = () => {
   return (
     <section
-      className="w-full"
-      style={{
-        backgroundColor: '#FFFFFF',
-        paddingTop: '60px',
-        paddingBottom: '60px',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-      }}
+      className="w-full bg-white pt-[60px] pb-[60px] min-h-screen flex items-center"
     >
       <div
         id="section_container"
-        style={{
-          maxWidth: '1440px',
-          margin: '0 auto',
-          paddingLeft: '42px',
-          paddingRight: '42px',
-          boxSizing: 'border-box',
-          width: '100%',
-        }}
+        className="max-w-[1440px] mx-auto px-[42px] w-full box-border"
       >
         {/* Eyebrow */}
         <span
           id="eyebrow"
-          className="block font-sans"
-          style={{
-            fontSize: '10px',
-            fontWeight: 500,
-            letterSpacing: '3px',
-            lineHeight: '14px',
-            color: '#000000',
-            textTransform: 'uppercase',
-            marginBottom: '16px',
-          }}
+          className="block font-sans text-[10px] font-medium tracking-[3px] leading-[14px] text-black uppercase mb-4"
         >
           PREMIUM COLLECTIONS
         </span>
@@ -48,17 +24,7 @@ const PremiumCollections: React.FC = () => {
         {/* Heading */}
         <h2
           id="heading"
-          className="font-serif"
-          style={{
-            fontSize: '48px',
-            fontWeight: 400,
-            lineHeight: '1.15',
-            color: '#000000',
-            letterSpacing: '-0.8px',
-            margin: 0,
-            marginBottom: '24px',
-            maxWidth: '650px',
-          }}
+          className="font-serif text-[48px] font-normal leading-[1.15] text-black tracking-[-0.8px] m-0 mb-6 max-w-[650px]"
         >
           Bespoke Stone Collections
         </h2>
@@ -67,19 +33,7 @@ const PremiumCollections: React.FC = () => {
         <Link
           id="cta_link"
           href="#discover"
-          className="inline-block no-underline font-sans"
-          style={{
-            fontSize: '9px',
-            fontWeight: 600,
-            letterSpacing: '2.2px',
-            color: '#000000',
-            textTransform: 'uppercase',
-            textDecoration: 'none',
-            borderBottom: '1.5px solid #000000',
-            paddingBottom: '4px',
-            marginBottom: '48px',
-            display: 'inline-block',
-          }}
+          className="inline-block no-underline font-sans text-[9px] font-semibold tracking-[2.2px] text-black uppercase border-b-[1.5px] border-black pb-1 mb-12"
         >
           DISCOVER MORE
         </Link>
@@ -87,23 +41,11 @@ const PremiumCollections: React.FC = () => {
         {/* Gallery Grid */}
         <div
           id="gallery_grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '68.5% 29.5%',
-            columnGap: '2%',
-            alignItems: 'start',
-            width: '100%',
-          }}
+          className="grid grid-cols-[68.5%_29.5%] gap-x-[2%] w-full"
         >
           {/* Landscape Image - Living Room Interior */}
           <figure
-            className="m-0 overflow-hidden"
-            style={{
-              gridColumn: '1',
-              position: 'relative',
-              width: '100%',
-              height: '656px',
-            }}
+            className="m-0 col-start-1 relative w-full"
           >
             <Image
               id="image_landscape"
@@ -111,24 +53,13 @@ const PremiumCollections: React.FC = () => {
               alt="MAIA Bespoke stone furniture collection"
               width={1010}
               height={656}
-              className="w-full h-full block"
-              style={{
-                objectFit: 'contain',
-                objectPosition: 'center center',
-                display: 'block',
-              }}
+              className="w-full h-auto block shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
             />
           </figure>
 
           {/* Portrait Video - MAIA Process */}
           <figure
-            className="m-0 overflow-hidden"
-            style={{
-              gridColumn: '2',
-              position: 'relative',
-              width: '100%',
-              height: '656px',
-            }}
+            className="m-0 col-start-2 relative w-full h-full"
           >
             <video
               id="video_portrait"
@@ -137,12 +68,7 @@ const PremiumCollections: React.FC = () => {
               loop
               muted
               playsInline
-              className="w-full h-full block"
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'center center',
-                display: 'block',
-              }}
+              className="w-full h-full block object-cover object-center shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
             />
           </figure>
         </div>

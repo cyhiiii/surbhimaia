@@ -1,9 +1,10 @@
 import Header from '@/components/layout/Header';
 import Hero from '@/components/sections/Hero';
-import PremiumCollections from '@/components/sections/PremiumCollections';
 import StorytellingSection from '@/components/sections/StorytellingSection';
 import ProcessSection from '@/components/sections/ProcessSection';
+import AboutSection from '@/components/sections/AboutSection';
 import Footer from '@/components/sections/Footer';
+import ScrollSnake from '@/components/ui/ScrollSnake';
 
 export default function Home() {
   return (
@@ -12,10 +13,13 @@ export default function Home() {
       <main className="relative w-screen h-screen overflow-hidden">
         <Hero />
       </main>
-      <PremiumCollections />
-      <StorytellingSection />
-      <ProcessSection />
-      <Footer />
+      <div className="relative w-full bg-white">
+        <ScrollSnake />
+        <StorytellingSection />
+        <ProcessSection />
+        <AboutSection />
+        <Footer />
+      </div>
     </>
   );
 }

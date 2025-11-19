@@ -1,65 +1,43 @@
 # Copilot Instructions for surbhimaia
 
-## Project Purpose
+## Project Context
+This is an enterprise-grade **Next.js 14+ (App Router)** application using **TypeScript** and **Tailwind CSS**.
+The primary goal is to implement **pixel-perfect** web pages based on detailed JSON specifications provided by a visual-analysis agent.
 
-This repository defines a front-end implementation agent that converts JSON specifications (from a visual-analysis agent) into pixel-accurate HTML/CSS webpage reproductions.
+## Architecture & Structure
+- **`src/app/`**: App Router pages and layouts. `page.tsx` composes sections.
+- **`src/components/sections/`**: Major page sections (e.g., `Hero.tsx`, `PremiumCollections.tsx`). Each section corresponds to a logical block in the design spec.
+- **`src/components/layout/`**: Global components like `Header.tsx`, `Footer.tsx`.
+- **`src/lib/`**: Utilities, including `cloudinary.ts` for image optimization.
+- **`src/types/`**: TypeScript definitions, specifically `specification.ts` which defines the JSON spec structure.
 
-## Core Workflow
+## Coding Standards & Patterns
 
-The agent receives JSON input with this structure:
-```json
-{
-  "pages": [...],
-  "notes": "..."
-}
-```
+### 1. Pixel-Perfect Implementation
+- **Strict Fidelity**: If a spec requires `width: 345px`, use `w-[345px]` or `style={{ width: '345px' }}`. Do not approximate with `w-1/3` or `w-96`.
+- **Z-Index**: Respect `z-index` layers explicitly as defined in the spec to ensure correct stacking contexts.
+- **Positioning**: Use absolute positioning where the spec dictates exact coordinates, but prefer Flexbox/Grid for internal layout flow where appropriate.
 
-And produces:
-- `/index.html` - Semantic HTML following JSON element order
-- `/styles.css` - Pixel-precise CSS with exact measurements from JSON
-- `/assets/` - Image/SVG/video placeholders with correct sizes
-- `implementation_notes` - Assumptions and validation checklist
+### 2. Styling Strategy
+- **Tailwind First**: Use Tailwind utility classes for standard spacing, colors, and typography.
+- **Arbitrary Values**: Use Tailwind arbitrary values (e.g., `top-[80px]`, `bg-[#381E55]`) for specific spec values.
+- **Inline Styles**: Use `style={{ ... }}` for dynamic values or when copying complex CSS directly from the spec (e.g., gradients, specific transforms).
 
-## Critical Requirements
+### 3. Asset Management
+- **Cloudinary**: All media assets are hosted on Cloudinary.
+- **Helper**: Use `src/lib/cloudinary.ts` -> `getCloudinaryUrl()` for generating optimized URLs.
+- **Next.js Image**: Prefer `next/image` for static images to leverage automatic optimization.
 
-1. **Pixel Accuracy is Paramount**: All spacing, margins, padding, sizing, and positioning must match JSON spec exactly using `px` units
-2. **Literal Translation**: Do not invent, simplify, or modify design details - translate JSON → code exactly
-3. **CSS Cascade**: Apply styles in order: `global_styles` → section-level CSS → element CSS
-4. **Render Order**: Use z-index and stacking contexts to reproduce the JSON's `render_order`
-5. **DOM Structure**: Build HTML following `children_order` exactly as defined in JSON
+### 4. Component Structure
+- Components should be functional, typed with `React.FC` or standard function declarations.
+- Use `'use client'` directive only when necessary (hooks, interactivity). Default to Server Components.
 
-## Implementation Patterns
+## Developer Workflow
+- **Run Dev Server**: `npm run dev`
+- **Linting**: `npm run lint`
+- **Type Checking**: Ensure no `any` types; use interfaces from `src/types/specification.ts` when dealing with spec data.
 
-- Use semantic HTML tags where appropriate, but prioritize JSON structure accuracy
-- Prefer CSS classes over inline styles
-- Merge multiple viewport definitions into intelligent `@media` rules
-- Create asset placeholders with exact `rendered_size` from JSON spec
-- For SVGs: embed placeholder geometry with correct dimensions
-- For videos/Lottie: create placeholder files with correct aspect ratio
-
-## Output Format
-
-Always structure responses as:
-```
-/index.html
--------------------------
-<complete HTML>
-
-/styles.css
--------------------------
-<complete CSS>
-
-/assets/
--------------------------
-<asset list with sizes>
-
-implementation_notes
--------------------------
-<assumptions + validation checklist>
-```
-
-## When Ambiguous
-
-- Explain assumptions clearly in `implementation_notes`
-- Implement the closest literal match to JSON
-- Never skip or simplify - maintain full fidelity
+## Critical "Don'ts"
+- Do not simplify designs to fit standard Tailwind scales.
+- Do not ignore `z-index` or stacking contexts.
+- Do not use local asset files unless they are strictly placeholders; prefer Cloudinary.

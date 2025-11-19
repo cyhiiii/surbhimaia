@@ -7,7 +7,6 @@ export default function ProcessSection() {
   return (
     <section
       style={{
-        backgroundColor: '#FFFFFF',
         color: '#000000',
         width: '100%',
         minHeight: '600px',
@@ -16,6 +15,8 @@ export default function ProcessSection() {
         justifyContent: 'center',
         padding: '80px',
         gap: '60px',
+        position: 'relative',
+        zIndex: 10,
       }}
     >
       {/* Text Content Wrapper */}
@@ -114,7 +115,6 @@ export default function ProcessSection() {
           flex: 1,
           width: '50%',
           maxWidth: '700px',
-          overflow: 'hidden',
         }}
       >
         <Image
@@ -127,6 +127,7 @@ export default function ProcessSection() {
             height: 'auto',
             display: 'block',
             objectFit: 'cover',
+            boxShadow: '0px 20px 40px rgba(0, 0, 0, 0.2)',
           }}
         />
       </div>
