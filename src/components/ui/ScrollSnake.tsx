@@ -158,10 +158,14 @@ const ScrollSnake: React.FC = () => {
             <stop offset="100%" stopColor="#996515" />
           </linearGradient>
           <linearGradient id="diamondGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="50%" stopColor="#F0F0F0" />
-            <stop offset="100%" stopColor="#D9D9D9" />
+            <stop offset="0%" stopColor="#E0F7FA" />
+            <stop offset="50%" stopColor="#FFFFFF" />
+            <stop offset="100%" stopColor="#B2EBF2" />
           </linearGradient>
+          <radialGradient id="onyxGradient" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stopColor="#4A4A4A" />
+            <stop offset="100%" stopColor="#000000" />
+          </radialGradient>
           <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="2" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -173,51 +177,45 @@ const ScrollSnake: React.FC = () => {
           <g 
             key={index} 
             transform={`translate(${stone.x}, ${stone.y}) rotate(${stone.rotation})`}
+            ref={(el) => { stonesRef.current[index] = el as SVGElement; }}
+            style={{ 
+              transform: 'scale(0)', 
+              transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out',
+              transformOrigin: 'center',
+              opacity: 0
+            }}
           >
             {stone.type === 'diamond' && (
-              <path
-                ref={(el) => { stonesRef.current[index] = el; }}
-                d="M0 -14 L12 0 L0 14 L-12 0 Z"
-                fill="url(#diamondGradient)"
-                stroke="#D4AF37"
-                strokeWidth="0.5"
-                style={{ 
-                  transform: 'scale(0)', 
-                  transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out',
-                  transformOrigin: 'center',
-                  opacity: 0
-                }}
-              />
+              <g>
+                {/* Main Body */}
+                <path d="M0 -15 L13 0 L0 15 L-13 0 Z" fill="url(#diamondGradient)" stroke="#A0A0A0" strokeWidth="0.5" />
+                {/* Facets */}
+                <path d="M0 -15 L4 -4 L0 0 L-4 -4 Z" fill="white" opacity="0.6" />
+                <path d="M0 15 L4 4 L0 0 L-4 4 Z" fill="#E0F7FA" opacity="0.4" />
+                <path d="M13 0 L4 -4 L0 0 L4 4 Z" fill="#B2EBF2" opacity="0.5" />
+                <path d="M-13 0 L-4 -4 L0 0 L-4 4 Z" fill="#B2EBF2" opacity="0.5" />
+              </g>
             )}
             {stone.type === 'hexagon' && (
-              <path
-                ref={(el) => { stonesRef.current[index] = el; }}
-                d="M-8 -12 L8 -12 L16 0 L8 12 L-8 12 L-16 0 Z"
-                fill="url(#goldGradient)"
-                stroke="#FFFFFF"
-                strokeWidth="0.5"
-                style={{ 
-                  transform: 'scale(0)', 
-                  transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out',
-                  transformOrigin: 'center',
-                  opacity: 0
-                }}
-              />
+              <g>
+                {/* Main Body */}
+                <path d="M-9 -14 L9 -14 L18 0 L9 14 L-9 14 L-18 0 Z" fill="url(#goldGradient)" stroke="#B8860B" strokeWidth="0.5" />
+                {/* Facets */}
+                <path d="M-9 -14 L0 0 L9 -14 Z" fill="#FEDC56" opacity="0.4" />
+                <path d="M9 -14 L18 0 L0 0 Z" fill="#D4AF37" opacity="0.2" />
+                <path d="M18 0 L9 14 L0 0 Z" fill="#996515" opacity="0.3" />
+                <path d="M9 14 L-9 14 L0 0 Z" fill="#D4AF37" opacity="0.2" />
+                <path d="M-9 14 L-18 0 L0 0 Z" fill="#996515" opacity="0.3" />
+                <path d="M-18 0 L-9 -14 L0 0 Z" fill="#FEDC56" opacity="0.4" />
+              </g>
             )}
             {stone.type === 'circle' && (
-              <circle
-                ref={(el) => { stonesRef.current[index] = el; }}
-                r="10"
-                fill="#1A1A1A"
-                stroke="url(#goldGradient)"
-                strokeWidth="2"
-                style={{ 
-                  transform: 'scale(0)', 
-                  transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease-out',
-                  transformOrigin: 'center',
-                  opacity: 0
-                }}
-              />
+              <g>
+                {/* Onyx Body */}
+                <circle r="11" fill="url(#onyxGradient)" stroke="url(#goldGradient)" strokeWidth="1.5" />
+                {/* Specular Highlight */}
+                <ellipse cx="-4" cy="-4" rx="3" ry="2" transform="rotate(-45)" fill="white" opacity="0.3" />
+              </g>
             )}
           </g>
         ))}

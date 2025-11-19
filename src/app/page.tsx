@@ -3,6 +3,8 @@ import Hero from '@/components/sections/Hero';
 import StorytellingSection from '@/components/sections/StorytellingSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import AboutSection from '@/components/sections/AboutSection';
+import MaterialsSection from '@/components/sections/MaterialsSection';
+import GallerySection from '@/components/sections/GallerySection';
 import Footer from '@/components/sections/Footer';
 import ScrollSnake from '@/components/ui/ScrollSnake';
 
@@ -18,6 +20,8 @@ export default function Home() {
         <StorytellingSection />
         <ProcessSection />
         <AboutSection />
+        <MaterialsSection />
+        <GallerySection />
         <Footer />
       </div>
     </>
